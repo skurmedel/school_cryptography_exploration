@@ -55,7 +55,7 @@ def extended(a: SupportsInt, b: SupportsInt) -> Union[Tuple[int, int, int], None
 
     The GCD will always be reported positive.
 
-    The extended Euclidean division algorithm is useful for finding modular inverses in finite groups.
+    The extended Euclidean division algorithm is useful for finding inverses in multiplicative finite groups.
 
     Edge cases:
         if both are zero, this will return None

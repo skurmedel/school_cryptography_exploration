@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from ..euclidean import extended as egcd
 
 
 def _order(p: int, q: int):
@@ -45,3 +46,5 @@ def decrypt(ciphertext: int, private_key: PrivateKey) -> int:
     Returns the plaintext.
     """
     return pow(ciphertext, private_key.d, private_key.n)
+
+    
