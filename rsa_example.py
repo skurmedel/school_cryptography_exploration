@@ -1,6 +1,6 @@
 from discrete import rsa
 
-# Order of this ~120 bits, so we should be able to fit about 15 ASCII chars.
+# Size of this product is ~120 bits, so we should be able to fit about 15 ASCII chars.
 p, q = 1905621573238457983, 3206147249787367099
 n = p * q
 e = 11
