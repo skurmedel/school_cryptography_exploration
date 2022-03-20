@@ -1,5 +1,6 @@
 import math
-from ..euclidean import FIRST_PRIMES, division, extended
+from ..euclidean import division, extended
+from ..primality import FIRST_PRIMES
 
 
 def test_division_simple():
