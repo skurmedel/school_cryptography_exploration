@@ -15,6 +15,8 @@ Some computational number theory stuff and cryptography implementations for self
 - [x] Shanks Babystep-Giantstep
 - [ ] Pohlig-Hellman
 - [ ] Pollard Rho
+- [ ] Diffie-Hellman
+- [ ] Elgamal crypto
 
 ### Factorisation
 - [ ] Quadratic Sieve
