@@ -1,20 +1,16 @@
 from discrete import rsa
 
-# Size of this product is ~120 bits, so we should be able to fit about 15 ASCII chars.
-p, q = 1905621573238457983, 3206147249787367099
-n = p * q
-e = 11
+print("Generating keypair of at least 256 bits: ")
+pkey, pubkey = rsa.generate_keys(min_bits=256)
+print(pkey)
+print(pubkey)
 
-_, d, _ = rsa.egcd(e, rsa._order(p, q))
-pkey = rsa.PrivateKey(n, d)
-pubkey = rsa.PublicKey(n, e)
-
-msg = "Riemann Rocks"
-assert len(msg) <= 15
-plaintext = int.from_bytes(msg.encode("utf-8"), "big")
+msg = "Riemann Rocks 😊"
+msg_bytes = msg.encode("utf-8")
+plaintext = int.from_bytes(msg_bytes, "big")
 print(f"Message: {msg}\nPlaintext: {plaintext}")
 enc = rsa.encrypt(plaintext, pubkey)
 print(f"Encrypted: {enc}")
 dec = rsa.decrypt(enc, pkey)
 print(f"Decrypted: {dec}")
-print("Decrypted (UTF-8): " + dec.to_bytes(len(msg), "big").decode("utf-8"))
+print("Decrypted (UTF-8): " + dec.to_bytes(len(msg_bytes), "big").decode("utf-8"))

@@ -1,1 +1,1 @@
-from .rsa import egcd, encrypt, decrypt, PublicKey, PrivateKey, _order
+from .rsa import egcd, encrypt, decrypt, PublicKey, PrivateKey, _order, generate_keys

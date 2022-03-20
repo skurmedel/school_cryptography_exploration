@@ -4,7 +4,7 @@ from math import log, ceil
 
 def miller_rabin(a: int, n: int) -> bool:
     """
-    The Miller-Rabin probabilistic test, using potential witness a to test n for compositeness.
+    The Miller-Rabin probabilistic test function, using potential witness a to test n for compositeness.
 
     This is a stronger test than Fermat's test, as it does not suffer from Carmichael-numbers.
 
@@ -35,7 +35,8 @@ def miller_rabin(a: int, n: int) -> bool:
     #
     #   x^2 - 1 = 0  (mod n)
     #
-    # then n | (x - 1)(x + 1) divides either (x - 1) or (x + 1) so x is congruent to one of them.
+    # then n | (x - 1)(x + 1) divides either (x - 1) or (x + 1) so x is congruent to one of them. 
+    # This means there's only two roots to the polynomial.
     #
     # Now the terms in  a^q, a^(2 q), a^(2^2 q), ..., a^(2^k q) are square roots of the previous term,
     # and 2^k q = p - 1 so the last one is 1.
@@ -73,7 +74,7 @@ def miller_rabin_samples(n: int) -> int:
     """
     n = abs(n)
     if n == 1:
-        return 1
+        return 1 # maybe 0?
 
     res = log(log(n), 4) - log(1.0 - 0.9999, 4)
     return 1 if res < 1 else int(ceil(res))
@@ -94,6 +95,7 @@ def miller_rabin_test(n: int, k: int):
         raise ValueError("k must be equal or greater than 1")
     k = k if k < n else n - 1
     for i in range(0, k):
+        # TODO: there is an inefficiency here: we refactor n - 1 several times for the same n.
         if miller_rabin(randint(1, n - 1), n):
             return True
     return False
