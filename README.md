@@ -3,8 +3,11 @@ Some computational number theory stuff and cryptography implementations for self
 
 ## Algorithm roadmap:
 
-### Primes and RSA
+### Modular arithmetic and GCD
 - [x] Extended Euclidean division (GCD)
+- [ ] Chinese Remainder Theorem
+
+### Primes and RSA
 - [x] Miller-Rabin test
 - [x] Random Prime generator
 - [x] RSA
