@@ -17,13 +17,14 @@ Some computational number theory stuff and cryptography implementations for self
 ### Discrete log
 - [x] Shanks Babystep-Giantstep
 - [ ] Pohlig-Hellman
-- [ ] Pollard Rho
+- [x] Pollard's rho for logarithms
 - [ ] Diffie-Hellman
 - [ ] Elgamal crypto
 
 ### Factorisation
 - [ ] Quadratic Sieve
 - [x] Pollard p - 1
+- [ ] Pollard's rho
 
 ### Elliptic Curves
 *TBD*
