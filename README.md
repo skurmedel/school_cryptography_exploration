@@ -23,7 +23,7 @@ Some computational number theory stuff and cryptography implementations for self
 
 ### Factorisation
 - [ ] Quadratic Sieve
-- [ ] Pollard p - 1
+- [x] Pollard p - 1
 
 ### Elliptic Curves
 *TBD*
